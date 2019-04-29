@@ -19,10 +19,10 @@ class SatTracker():
    port = None
 
    #
-   # Send Data Over TCP Socket 
+   # Set Serial Port Buadrate
    #
 
-   socket = False
+   baudrate = 9600
 
    #
    # Minimum Satelite Elevation
@@ -259,7 +259,7 @@ class SatTracker():
             #
 
             #Serial takes two parameters: serial device and baudrate
-            connection = serial.Serial(self.port, 9600)
+            connection = serial.Serial(self.port, self.baudrate)
 
          except:
  

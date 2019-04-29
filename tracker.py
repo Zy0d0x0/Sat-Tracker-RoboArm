@@ -38,7 +38,8 @@ parser.add_argument("-custom-tle", dest="custom_tle", help="Custom TLE File For 
 parser.add_argument("-elevation", dest="elevation", default=10, help="Minimum Satalite Elevation For Prediction.")
 
 # Enable Serial Port For Celestron Telescope Mount & Set Min Elevation Point Of Movement
-parser.add_argument("-com", dest="serial_port",  help="Mount Serial Port.")
+parser.add_argument("-com", dest="serial_port",  help="Arm Serial Port.")
+parser.add_argument("-baud", dest="baudrate",  help="Arm Serial Port Baudrate.")
 parser.add_argument("-min", dest="minMount", default=10, help="Minimum Mount Elevation Prior To Movement.")
 
 # Disable AOS Sounds (Used When Sleeping), All Other Functions Will Operate
@@ -98,6 +99,13 @@ if args.latitude and args.longitude:
    tracker.lat = args.latitude
    tracker.lon = args.longitude
 
+#
+# Set Baudrate of serial port
+#
+
+if args.baudrate:
+   print("Setting Baudrate: {}".format(args.baudrate))
+   tracker.baudrate = args.baudrate
 
 
 #
