@@ -208,15 +208,11 @@ class SatTracker():
       print("Arm Azimuth: {:.2f}".format(compass_angle))
       print("Arm Elevation: {:.2f}{}\n".format(elevation, u"\u00b0"))
 
-      #Create String In Bytes & Send To The Arm
+      # Create String In Bytes & Send To The Arm
 
       #data = bytes(compass_angle,elevation)
       #connection.send()
 
-
-      #
-      # Postioning Code Here
-      #
 
    #
    # Get The Current Postion Of The Mount
@@ -251,7 +247,7 @@ class SatTracker():
 
       print("Setting Home Postion Of Arm")
 
-      #Create String In Bytes & Send To The Arm
+      # Create String In Bytes & Send To The Arm
 
       #data = bytes(compass_angle,elevation)
       #connection.send()
@@ -273,7 +269,7 @@ class SatTracker():
             # Add in Python Serial Connection Here
             #
 
-            #Serial takes two parameters: serial device and baudrate
+            # Serial takes two parameters: serial device and baudrate
             connection = serial.Serial(self.port, self.baudrate)
 
          except:
