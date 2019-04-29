@@ -158,7 +158,7 @@ try:
 
       for sat in sorted(aos, key=lambda k: k["startPass"]):
          tracker.satName = sat["satName"]
-         tracker.tracker(client, sat["startPass"], sat["maxEle"], sat["endPass"])
+         tracker.tracker(sat["startPass"], sat["maxEle"], sat["endPass"])
    
 
       if aosLen == 0:

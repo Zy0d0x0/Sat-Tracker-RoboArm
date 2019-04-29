@@ -269,37 +269,6 @@ class SatTracker():
 
          return connection
 
-   #
-   # Connect To TCP Server
-   #
-
-   def connectClient(self, address, port):
-
-      try:
-         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-         client.connect((address, int(port)))
-         return client
-      except:
-         print("Failed To Connect To Host")
-         time.sleep(1)
-         self.socket = False
-
-
-
-   #
-   # Send Data To TCP Server
-   #
-
-   def sendData(self, client, lon, lat, alt):
-
-      try:
-
-         message = "{},{:.2f},{:.2f},{:.2f},#".format(self.satName, lon, lat, alt)
-         client.send(message.encode())
-
-      except:
-            print("Failed To Send Packet")
-            self.socket = False
 
 
    #
@@ -341,7 +310,7 @@ class SatTracker():
    #
 
 
-   def tracker(self, client, startPass, MaxEle, endPass):
+   def tracker(self, startPass, MaxEle, endPass):
 
       if self.port is not None:
          connection = self.connectMount()
@@ -370,14 +339,7 @@ class SatTracker():
             if int(ele) >= self.minMountElevation:
                self.mountMovePostion(azi, ele, connection)
                
-
-         #
-         # Send Data To Socket Server
-         #
-
-         if self.socket:
-            self.sendData(client, lon, lat, alt)
-
+               
          #
          # Play AOS Alert Tone 
          #
