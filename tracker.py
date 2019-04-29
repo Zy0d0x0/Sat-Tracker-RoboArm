@@ -37,12 +37,6 @@ parser.add_argument("-custom-tle", dest="custom_tle", help="Custom TLE File For 
 # Sets the default elevation for the satelite prediction
 parser.add_argument("-elevation", dest="elevation", default=10, help="Minimum Satalite Elevation For Prediction.")
 
-# Enable TCP Networking Client Defaults To Localhost Port 9999
-parser.add_argument("-network", action="store_true", help="Enable TCP Network Stream Sat Name, Latitude, Longitude and Altitude over TCP Network.")
-# Define Custom Host &/Or Port For TCP Client 
-parser.add_argument("-host", dest="tcp_host", default="127.0.0.1", help="TCP Network Host IP Address.")
-parser.add_argument("-port", dest="tcp_port", default=9999, help="TCP Network Port.")
-
 # Enable Serial Port For Celestron Telescope Mount & Set Min Elevation Point Of Movement
 parser.add_argument("-com", dest="serial_port",  help="Mount Serial Port.")
 parser.add_argument("-min", dest="minMount", default=10, help="Minimum Mount Elevation Prior To Movement.")
@@ -89,18 +83,6 @@ else:
    satList = ["ISS (ZARYA)"]
 
 
-#
-# If network & TCP Host Port
-#
-
-if args.network:
-
-   if args.tcp_host:
-      host = args.tcp_host
-
-   if args.tcp_port:
-      port = int(args.tcp_port)
-
 
 #
 #  Define The Tracker
@@ -116,15 +98,6 @@ if args.latitude and args.longitude:
    tracker.lat = args.latitude
    tracker.lon = args.longitude
 
-#
-# Connect To Remote Server & Ouput Lat, Lon
-#
-
-if args.network:
-   client = tracker.connectClient(host, port)
-   tracker.socket = True
-else:
-   client = None
 
 
 #
