@@ -208,6 +208,11 @@ class SatTracker():
       print("Arm Azimuth: {:.2f}".format(compass_angle))
       print("Arm Elevation: {:.2f}{}\n".format(elevation, u"\u00b0"))
 
+      #Create String In Bytes & Send To The Arm
+
+      #data = bytes(compass_angle,elevation)
+      #connection.send()
+
 
       #
       # Postioning Code Here
@@ -242,6 +247,12 @@ class SatTracker():
      #
 
       print("Setting Home Postion Of Arm")
+
+      #Create String In Bytes & Send To The Arm
+
+      #data = bytes(compass_angle,elevation)
+      #connection.send()
+
 
    #
    # Connect To Telescope Mount
