@@ -229,7 +229,10 @@ class SatTracker():
       #
 
       print("Getting Postion Of Arm")
-
+      
+      #
+      # controllerAzimuth,controllerElevation =  connection.read(connection.inWaiting)
+      #
 
       controllerAzimuth = 0.0 
       controllerElevation = 0.0
