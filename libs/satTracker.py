@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from time import strftime, gmtime, localtime
 import geopy.distance
 from playsound import playsound
-import time, os, socket, sys
+import time, os, socket, sys, serial
 
 
 # Change Client To Server
@@ -258,7 +258,8 @@ class SatTracker():
             # Add in Python Serial Connection Here
             #
 
-            connection = None
+            #Serial takes two parameters: serial device and baudrate
+            connection = serial.Serial(self.port, 9600)
 
          except:
  
