@@ -250,9 +250,10 @@ class SatTracker():
    def connectMount(self):
 
       if self.port is not None:
+
          try:
 
-            print("Connecting To Mount")
+            print("Connecting To Arm Port: {}, Baudrate: {}".format(self.port,self.baudrate))
 
             #
             # Add in Python Serial Connection Here
