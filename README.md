@@ -37,10 +37,6 @@ optional arguments:
   -custom-tle CUSTOM_TLE
                         Custom TLE File For Offline Tracking
   -elevation ELEVATION  Minimum Satalite Elevation For Prediction.
-  -network              Enable TCP Network Stream Sat Name, Latitude,
-                        Longitude and Altitude over TCP Network.
-  -host TCP_HOST        TCP Network Host IP Address.
-  -port TCP_PORT        TCP Network Port.
   -com SERIAL_PORT      Mount Serial Port.
   -min MINMOUNT         Minimum Mount Elevation Prior To Movement.
   -s                    Silent Mode (Disable AOS Alert Sounds).
